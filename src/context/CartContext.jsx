@@ -13,11 +13,11 @@ export const CartProvider = ({ children }) => {
   }, [cartItems]);
 
   const addToCart = (product) => {
-    setCartItems((prevItems) => [...prevItems, product]);
+    setCartItems((prevItems) => [...prevItems, { ...product, cartId: Date.now() }]);
   };
 
-  const removeFromCart = (productId) => {
-    setCartItems((prevItems) => prevItems.filter(item => item.id !== productId));
+  const removeFromCart = (cartId) => {
+    setCartItems((prevItems) => prevItems.filter(item => item.cartId !== cartId));
   };
 
   const clearCart = () => {

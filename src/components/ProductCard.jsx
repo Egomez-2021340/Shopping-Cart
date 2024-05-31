@@ -1,4 +1,3 @@
-// src/components/ProductCard.jsx
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import './ProductCard.css';
@@ -11,8 +10,8 @@ const ProductCard = ({ product }) => {
       <img src={product.urlImage || '/src/assets/Bidon1.png'} alt={product.name} />
       <h2>{product.name}</h2>
       <p>{product.description}</p>
-      <p>Q{product.price}</p>
-      <button onClick={() => addToCart(product)}>Add to the cart</button>
+      <p>${product.price}</p>
+      <button onClick={() => addToCart(product)}>Add to cart</button>
     </div>
   );
 };
